@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# npm
-npm install
+# yarn
+yarn install
 
 # start service
 exec "$@"
