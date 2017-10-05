@@ -44,7 +44,7 @@
     "eslint": "^3.5.x"
   },
   "engines": {
-    "node": "^6.5.x"
+    "node": "^8.6.0"
   },
   "files": [
     "README.md",

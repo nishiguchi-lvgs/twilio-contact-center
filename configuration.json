@@ -1,6 +1,6 @@
 {
 	"ivr": {
-		"text": "Thanks for calling. You can press a key or say the department name. Press 1 for Sales, press 2 for Support",
+		"text": "お電話ありがとうございます。部署名を選択もしくは発話してください。セールスにお問い合わせの場合は1を、サポートにお問い合わせの場合は2を押してください。",
 		"options": [
 			{
 				"friendlyName": "Sales",
@@ -43,8 +43,9 @@
 		"workerReservationActivitySid": null,
 		"workerAssignmentActivitySid": null,
 		"callerId": null,
+		"smsId": null,
 		"applicationSid": null,
 		"workflowSid": null,
-    "facebookPageId": null
+    	"facebookPageId": null
 	}
 }
