@@ -18,7 +18,7 @@
 
 		<div class="row">
 			<div class="page-header col-md-12">
-				<h1>Twilio Contact Center</h1>
+				<h1>{{ 'title' | translate }}</h1>
 			</div>
 		</div>
 
@@ -27,14 +27,14 @@
 			<div class="col-md-4 col-md-push-8">
 
 				<div ng-if="setup == 'VALID'" class="alert alert-dismissible alert-success">
-					<strong>Well done!</strong><br />You sucessfully setup the demo.
+					<strong>{{ 'success.admiration' | translate }}</strong><br />{{ 'success.message' | translate }}
 				</div>
 
 				<div ng-if="setup == 'INVALID'" class="alert alert-dismissible alert-danger">
 					<strong>Oh snap!</strong><br />
 
 					<span ng-if="code == 'SERVER_TIMEOUT'">A connection timeout occured. Your browser could not retrieve data. Please check if your server is up and running.</span>
-					
+
 					<span ng-if="code == 'TWILIO_ACCOUNT_SID_INVALID'">The environment variable TWILIO_ACCOUNT_SID is not set or incorrect. If you are on Heroku please update your application settings.</span>
 					
 					<span ng-if="code == 'TWILIO_AUTH_TOKEN_INVALID'">The environment variable TWILIO_AUTH_TOKEN is not set or incorrect. If you are on Heroku please update your application settings.</span>
@@ -61,22 +61,22 @@
 
 			<div class="col-md-8 col-md-pull-4">
 
-				<h3>Call Center Administration</h3>
-				<span>A basic administration interface to create and delete new call centre agents.</span><br><br>
-				<div><a href="/administration/index.html" class="btn btn-primary">Open</a></div>
+				<h3>{{ 'administration.title' | translate }}</h3>
+				<span>{{ 'administration.note' | translate }}</span><br><br>
+				<div><a href="/administration/index.html" class="btn btn-primary">{{ 'button.open' | translate }}</a></div>
 
-				<h3>Call Agent Login</h3>
-				<span>The working environment for agents. Agents need to open this page and log in.</span>
+				<h3>{{ 'agentLogin.title' | translate }}</h3>
+				<span>{{ 'agentLogin.note' | translate }}</span>
 				<br><br>
-				<div><a href="/callcenter/index.html" class="btn btn-primary">Open</a></div>
+				<div><a href="/callcenter/index.html" class="btn btn-primary">{{ 'button.open' | translate }}</a></div>
 
-				<h3>Company's Website</h3>
-				<span>Page for customers who want to talk to an agent. Users can request a callback, call the agents via phone, request video support or chat with an agent</span>
+				<h3>{{ 'companyWebSite.title' | translate }}</h3>
+				<span>{{ 'companyWebSite.note' | translate }}</span>
 				<br><br>
 				<div>
-					<a href="/contact/index.html" class="btn btn-primary">Inbound &amp; Callback Request</a>
-					<a href="/contact/chat.html" class="btn btn-primary">Web Chat</a>
-					<a href="/contact/video.html" class="btn btn-primary">Video Call</a>
+					<a href="/contact/index.html" class="btn btn-primary">{{ 'button.callRequest' | translate }}</a>
+					<a href="/contact/chat.html" class="btn btn-primary">{{ 'button.webChat' | translate }}</a>
+					<a href="/contact/video.html" class="btn btn-primary">{{ 'button.videoChat' | translate }}</a>
 				</div>
 
 			</div>
@@ -86,6 +86,8 @@
 	</div>
 
 	<script src="/scripts/angular.min.js"></script>
+	<script src="/scripts/angular-translate.min.js"></script>
+	<script src="/scripts/angular-translate-loader-static-files.min.js"></script>
 	<script src="IndexController.js"></script>
 
 </body>

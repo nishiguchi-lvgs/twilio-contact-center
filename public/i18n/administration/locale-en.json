@@ -1,0 +1,30 @@
+{
+  "title": "Twilio Contact Center: Administration",
+  "callAgents": {
+    "tab": "Call Agents",
+    "header": {
+      "name": "Name",
+      "status": "Status",
+      "channels": "Channel(s)",
+      "team": "Team"
+    },
+    "button": {
+      "remove": "REMOVE",
+      "create": "CREATE AGENT",
+      "save": "Save"
+    }
+  },
+  "ivrMenu": {
+    "tab": "IVR Menu",
+    "textToSpeech": "Text-to-Speech",
+    "teams": {
+      "header": "Teams",
+      "ivrOption": "IVR Option"
+    },
+    "button": {
+      "delete": "delete",
+      "add": "add",
+      "save": "Save IVR"
+    }
+  }
+}

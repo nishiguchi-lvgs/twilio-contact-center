@@ -1,4 +1,15 @@
-var app = angular.module('supportApplication', ['ngMessages', 'glue.directives']);
+var app = angular.module('supportApplication', ['ngMessages', 'luegg.directives', 'pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/contact/chat/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
 
 app.controller('ChatController', function ($scope, $http, $timeout, $log) {
 
@@ -108,7 +119,7 @@ app.controller('ChatController', function ($scope, $http, $timeout, $log) {
 
 		channel.join().then(function (member) {
 			$scope.messages.push({
-				body: 'An agent will be available shortly',
+				body: 'オペレータが参りますのでしばらくお待ちください。',
 				author: 'System'
 			});
 

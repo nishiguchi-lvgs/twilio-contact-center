@@ -21,7 +21,7 @@
 
 		<div class="row">
 			<div class="page-header hidden-sm hidden-xs">
-				<h2>Twilio Contact Center: Video Call</h2>
+				<h2>{{ 'title' | translate }}</h2>
 			</div>
 
 			<div class="col-xs-12">
@@ -39,11 +39,11 @@
 					<form class="well" name="videoSupportForm" class="video-support-form form-inline" ng-show="UI.state == 'WAITING_FOR_INPUT' || UI.state == 'INITIALIZING'">
 
 						<div class="form-group">
-							<input ng-model="user.identity" name="identity" ng-minlength="3" ng-maxlength="20" ng-required="true" type="text" class="form-control" ng-disabled="session.isLoading" placeholder="Your Name">
+							<input ng-model="user.identity" name="identity" ng-minlength="3" ng-maxlength="20" ng-required="true" type="text" class="form-control" ng-disabled="session.isLoading" placeholder="{{ 'main.name' | translate }}">
 						</div>
 
 						<div class="form-group">
-							<button type="submit" ng-disabled="UI.state == 'INITIALIZING' || videoSupportForm.$invalid || videoSupportForm.$pristine" class="initiate btn btn-primary" ng-click="initVideo()" ><span style="margin-right: 10px;" ng-show="UI.state == 'INITIALIZING'"><i class="fa fa-refresh fa-spin"></i></span>Go</button>
+							<button type="submit" ng-disabled="UI.state == 'INITIALIZING' || videoSupportForm.$invalid || videoSupportForm.$pristine" class="initiate btn btn-primary" ng-click="initVideo()" ><span style="margin-right: 10px;" ng-show="UI.state == 'INITIALIZING'"><i class="fa fa-refresh fa-spin"></i></span>{{ 'button.go' | translate }}</button>
 						</div>
 
 						<div class="form-group">
@@ -76,7 +76,7 @@
 					</div>
 
 					<div ng-show="UI.state == 'CLOSED'">
-						<h4>Thank you for your patience...</h4>
+						<h4>{{ 'message.closed' | translate }}</h4>
 					</div>
 
 				</section>
@@ -84,11 +84,11 @@
 			</div>
 
 			<div class="col-md-4 hidden-sm hidden-xs">
-				<h4 style="margin:0px">Call us:</h4>
-				<h3 class="caller-id" style="margin:0px">{{configuration.twilio.callerId}}</h3>
+				<h4 style="margin:0px">{{ 'side.call' | translate }}:</h4>
+				<h3 class="caller-id" style="margin:0px;margin-bottom:40px">{{configuration.twilio.callerId}}</h3>
 
-				<h4>Request a callback?</h4>
-				<a href="index.html">click here</a>
+				<h4>{{ 'side.callback' | translate }}</h4>
+				<a href="index.html">{{ 'side.link' | translate }}</a>
 
 			</div>
 
@@ -98,6 +98,8 @@
 
 	<script src="/scripts/angular.min.js"></script>
 	<script src="/scripts/angular-messages.min.js"></script>
+	<script src="/scripts/angular-translate.min.js"></script>
+	<script src="/scripts/angular-translate-loader-static-files.min.js"></script>
 	<script src="VideoController.js"></script>
   <script src="//media.twiliocdn.com/sdk/js/video/v1/twilio-video.min.js"></script>
 

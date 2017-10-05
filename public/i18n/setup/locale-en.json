@@ -1,0 +1,24 @@
+{
+  "title": "Twilio Contact Center: Setup",
+  "activity": {
+    "offlineTitle": "Worker Offline Activity",
+    "idleTitle": "Worker Idle Activity",
+    "reservationTitle": "Worker Idle Activity",
+    "assignmentTitle": "Worker Idle Activity"
+  },
+  "phoneNumber": {
+    "title": "Phone Number",
+    "note": "This phone number will be configured as your voice inbound and outbound number by this setup script."
+  },
+  "smsNumber": {
+    "title": "SMS Number",
+    "note": "This SMS number provides a bridge from SMS to Twilio IP Chat and vice versa."
+  },
+  "facebook": {
+    "title": "Facebook Page ID (optional)",
+    "note": "Please enable Facebook Messaging in your Twilio account and forward messages to "
+  },
+  "button": {
+    "save": "Save Settings"
+  }
+}

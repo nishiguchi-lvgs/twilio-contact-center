@@ -1,0 +1,17 @@
+{
+  "title": "Twilio Contact Center: Video Call",
+  "main": {
+    "name": "Your Name"
+  },
+  "side": {
+    "call": "Call us",
+    "callback": "Request a callback?",
+    "link": "click here"
+  },
+  "button": {
+    "go": "Go"
+  },
+  "message": {
+    "closed": "Thank you for your patience..."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Twilio Contact Center",
+  "administration": {
+    "title": "Call Center Administration",
+    "note": "A basic administration interface to create and delete new call centre agents."
+  },
+  "agentLogin": {
+    "title": "Call Agent Login",
+    "note": "The working environment for agents. Agents need to open this page and log in."
+  },
+  "companyWebSite": {
+    "title": "Company's Website",
+    "note": "Page for customers who want to talk to an agent. Users can request a callback, call the agents via phone, request video support or chat with an agent."
+  },
+  "button": {
+    "open": "Open",
+    "callRequest": "Inbound & Callback Request",
+    "webChat": "Web Chat",
+    "videoChat": "Video Call"
+  },
+  "success": {
+    "admiration": "Well done!",
+    "message": "You sucessfully setup the demo."
+  }
+}

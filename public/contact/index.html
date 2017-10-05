@@ -20,7 +20,7 @@
 		<div class="row">
 
 			<div class="page-header hidden-sm hidden-xs">
-				<h2>Twilio Contact Center: Contact Form</h2>
+				<h2>{{ 'title' | translate }}</h2>
 			</div>
 
 			<div class="col-xs-12">
@@ -35,10 +35,10 @@
 
 				<form class="form-horizontal well" name="supportForm">
 					<fieldset>
-						<legend>...let us call you back</legend>
+						<legend>{{ 'main.title' | translate }}</legend>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Department</label>
+							<label class="col-md-4 control-label">{{ 'main.department' | translate }}</label>
 							<div class="col-md-8">
 								<select ng-model="question.team" class="form-control" id="team" required>
 									<option ng-repeat="option in configuration.ivr.options" value="{{ option.id }}">{{ option.friendlyName }}</option>
@@ -47,17 +47,17 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">What question do you have?</label>
+							<label class="col-md-4 control-label">{{ 'main.question.label' | translate }}</label>
 							<div class="col-md-8">
 								<textarea type="text" class="form-control" ng-model-options="{ debounce: 1000 }" name="text" ng-model="question.text" class="form-control" rows="4"></textarea>
-								<span class="help-block">Please type in the question you have</span>
+								<span class="help-block">{{ 'main.question.note' | translate }}</span>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Your name and phone number?</label>
+							<label class="col-md-4 control-label">{{ 'main.customerProp.label' | translate }}</label>
 							<div class="col-md-4">
-								<input type="text" placeholder="Name" name="name" ng-model="question.name" class="form-control" required>
+								<input type="text" placeholder="{{ 'main.customerProp.placeholder' | translate }}" name="name" ng-model="question.name" class="form-control" required>
 							</div>
 							<div class="col-md-4">
 								<input ng-model-options="{ debounce: 1000 }" type="text" placeholder="+..." name="phone" ng-model="question.phone" class="form-control" required phone-number>
@@ -66,19 +66,19 @@
 
 						<div class="col-md-8 col-md-offset-4">
 							<div ng-messages="supportForm.phone.$error" role="alert">
-								<div ng-message="required"ng-show="supportForm.phone.$touched" class="error-message alert alert-danger">Phone number is required</div>
-								<div ng-message="invalidPhone" class="error-message alert alert-danger">Invalid phone number</div>
+								<div ng-message="required"ng-show="supportForm.phone.$touched" class="error-message alert alert-danger">{{ 'message.required' | translate }}</div>
+								<div ng-message="invalidPhone"  class="error-message alert alert-danger">{{ 'message.invalid' | translate }}</div>
 							</div>
 
 							<div ng-messages="supportForm.$error" role="alert">
 								<div ng-message="serverError" class="alert alert-danger">
-		            	<strong>Oh snap!</strong><br>An error occured, please check JavaScript console for details
-		          	</div>
+									<strong>Oh snap!</strong><br>An error occured, please check JavaScript console for details
+								</div>
 							</div>
 
-							<button ng-click="submit()" ng-disabled="supportForm.$pristine || supportForm.$valid !== true" class="submit btn btn-primary btn-md">Submit</button>
+							<button ng-click="submit()" ng-disabled="supportForm.$pristine || supportForm.$valid !== true" class="submit btn btn-primary btn-md">{{ 'button.submit' | translate }}</button>
 
-							<div ng-show="submitted == true" class="alert alert-success" role="alert">Thanks, we call you as soon as possible.</div>
+							<div ng-show="submitted == true" class="alert alert-success" role="alert">{{ 'message.completed' | translate }}</div>
 						</div>
 
 					</fieldset>
@@ -87,11 +87,11 @@
 			</div>
 
 			<div class="col-md-4 hidden-sm hidden-xs">
-				<h4 style="margin:0px">Call us:</h4>
+				<h4 style="margin:0px">{{ 'side.call' | translate }}:</h4>
 				<h3 class="caller-id" style="margin:0px">{{configuration.twilio.callerId}}</h3>
 
-				<h4>Chat with an agent?</h4>
-				<a href="chat.html">click here</a>
+				<h4>{{ 'side.chat' | translate }}</h4>
+				<a href="chat.html">{{ 'side.link' | translate }}</a>
 
 			</div>
 
@@ -101,6 +101,8 @@
 
 	<script src="/scripts/angular.min.js"></script>
 	<script src="/scripts/angular-messages.min.js"></script>
+	<script src="/scripts/angular-translate.min.js"></script>
+	<script src="/scripts/angular-translate-loader-static-files.min.js"></script>
 	<script src="/scripts/directives/PhoneNumberDirective.js"></script>
 
 	<script src="ContactController.js"></script>

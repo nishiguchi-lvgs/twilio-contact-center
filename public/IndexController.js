@@ -1,4 +1,15 @@
-var app = angular.module('indexApplication', []);
+var app = angular.module('indexApplication', ['pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
 
 app.controller('IndexController', function ($scope, $http) {
 	$scope.setup;

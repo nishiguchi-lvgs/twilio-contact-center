@@ -1,0 +1,12 @@
+{
+  "title": "'s Call Agent Interface",
+  "logout": "logout",
+  "status": "Status",
+  "waiting": "Waiting for new task",
+  "phone": {
+    "button": {
+      "call": "CALL",
+      "hangup": "HANGUP"
+    }
+  }
+}

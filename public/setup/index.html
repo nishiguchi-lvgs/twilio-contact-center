@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Twilio Contact Center: Setup</title>
 
-  <link rel="stylesheet" href="/styles/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="/styles/default.css" type="text/css" />
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
   type="text/css" rel="stylesheet" />
@@ -17,13 +17,13 @@
 
   <section style="margin: auto; width:750px;">
 
-    <h2 class="page-header">Twilio Contact Center: Setup</h2>
+    <h2 class="page-header">{{ 'title' | translate }}</h2>
 
     <h4>Workspace: {{workspace.sid}} - {{workspace.friendlyName}}</h4>
 
     <form name="setupForm">
 
-      <h6>Worker Offline Activity:</h6>
+      <h6>{{ 'activity.offlineTitle' | translate }}:</h6>
 
       <div class="btn-group" uib-dropdown>
 
@@ -33,7 +33,7 @@
 
       </div>
 
-      <h6>Worker Idle Activity:</h6>
+      <h6>{{ 'activity.idleTitle' | translate }}:</h6>
 
       <div class="btn-group" uib-dropdown>
 
@@ -43,7 +43,7 @@
 
       </div>
 
-      <h6>Worker Reservation Activity:</h6>
+      <h6>{{ 'activity.reservationTitle' | translate }}:</h6>
 
       <div class="btn-group" uib-dropdown>
 
@@ -53,7 +53,7 @@
 
       </div>
 
-      <h6>Worker Assignment Activity:</h6>
+      <h6>{{ 'activity.assignmentTitle' | translate }}:</h6>
 
       <div class="btn-group" uib-dropdown>
 
@@ -65,17 +65,25 @@
 
       <br /><br />
 
-      <h4>Phone Number:</h4>
+      <h4>{{ 'phoneNumber.title' | translate }}:</h4>
 
-      <span class="help-block">This phone number will be configured as your voice inbound and outbound number by this setup script. If you provide a message-capable phone number the demo provides a bridge from SMS to Twiio IP Chat and vice versa.</span>
+      <span class="help-block">{{ 'phoneNumber.note' | translate }}</span>
 
       <input style="width:350px" ng-model="configuration.twilio.callerId" data-ng-trim="false" name="callerId" type="text" class="form-control" placeholder="+..." required phone-number>
 
       <br />
 
-      <h4>Facebook Page ID (optional):</h4>
+      <h4>{{ 'smsNumber.title' | translate }}:</h4>
 
-      <span class="help-block">Please enable Facebook Messaging in your Twilio account and forward messages to <span style="white-space: nowrap; font-weight:bold">http://&lt;your_application&gt;/api/messaging-adapter/inbound</span> (request method POST)</span>
+      <span class="help-block">{{ 'smsNumber.note' | translate }}</span>
+
+      <input style="width:350px" ng-model="configuration.twilio.smsId" data-ng-trim="false" name="smsId" type="text" class="form-control" placeholder="+..." required phone-number>
+
+      <br />
+
+      <h4>{{ 'facebook.title' | translate }}:</h4>
+
+      <span class="help-block">{{ 'facebook.note' | translate }}<span style="white-space: nowrap; font-weight:bold">http://&lt;your_application&gt;/api/messaging-adapter/inbound</span> (request method POST)</span>
 
        <input style="width:350px" ng-model="configuration.twilio.facebookPageId" data-ng-trim="true" name="facebookPageId" type="text" class="form-control">
 
@@ -86,7 +94,7 @@
 
       <div>
 
-        <button class="btn btn-primary" ng-disabled="setupForm.$invalid || setupForm.$pristine || UI.isSaving" ng-click="saveConfig()"><span style="margin-right: 10px;" ng-show="UI.isSaving == true"><i class="fa fa-refresh fa-spin"></i></span>Save Settings</button>
+        <button class="btn btn-primary" ng-disabled="setupForm.$invalid || setupForm.$pristine || UI.isSaving" ng-click="saveConfig()"><span style="margin-right: 10px;" ng-show="UI.isSaving == true"><i class="fa fa-refresh fa-spin"></i></span>{{ 'button.save' | translate }}</button>
 
       </div>
 
@@ -105,7 +113,7 @@
 
        <div style="margin-top:10px" ng-if="error != null" class="alert alert-dismissible alert-danger">
           <strong>Oh snap!</strong><br />
-          
+
           <span>{{ error | json}}</span>
 
       </div>
@@ -120,6 +128,8 @@
 
 <script src="/scripts/angular.min.js"></script>
 <script src="/scripts/angular-messages.min.js"></script>
+<script src="/scripts/angular-translate.min.js"></script>
+<script src="/scripts/angular-translate-loader-static-files.min.js"></script>
 <script src="/scripts/directives/PhoneNumberDirective.js"></script>
 
 <script src="SetupController.js"></script>

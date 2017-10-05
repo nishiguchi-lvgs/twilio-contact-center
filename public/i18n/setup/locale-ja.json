@@ -1,0 +1,24 @@
+{
+  "title": "Twilioコンタクトセンター: 設定",
+  "activity": {
+    "offlineTitle": "ワーカーのオフライン状態",
+    "idleTitle": "ワーカーの待機状態",
+    "reservationTitle": "ワーカーの予約状態",
+    "assignmentTitle": "ワーカーの割当済状態"
+  },
+  "phoneNumber": {
+    "title": "電話番号",
+    "note": "受信時及び発信時の電話番号として設定されます。"
+  },
+  "smsNumber": {
+    "title": "SMS番号",
+    "note": "SMSからTwilio IP Chatもしくはその逆のブリッジを提供するSMS番号として設定されます。"
+  },
+  "facebook": {
+    "title": "フェイスブックページID (オプション)",
+    "note": "Twilioアカウントでフェイスブックメッセージを有効にした上で、次のURLにメッセージを転送してください。"
+  },
+  "button": {
+    "save": "設定を保存する"
+  }
+}

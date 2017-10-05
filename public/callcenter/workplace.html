@@ -5,7 +5,7 @@
 <title>Twilio Omni Channel Contact Center - Call Agent Interface</title>
 
   <link rel="stylesheet" href="/styles/default.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css" />
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
       type="text/css" rel="stylesheet" />
 
@@ -24,10 +24,10 @@
 
       <div class="panel-body">
 
-        <div class="logout"><span ng-click="logout()">logout</span></div> 
-        <h3 class="name" class="page-header">{{worker.friendlyName}}&#39;s Call Agent Interface</h3>
+        <div class="logout"><span ng-click="logout()">{{ 'logout' | translate }}</span></div>
+        <h3 class="name" class="page-header">{{worker.friendlyName}}{{ 'title' | translate }}</h3>
 
-        <div>Status:&nbsp;<span style="font-size:1em" ng-class="{'label-success': worker.activityName == 'Idle', 'label-danger': worker.activityName == 'Busy', 'label-default': worker.activityName == 'Offline', 'label-warning': worker.activityName == 'Reserved'}" class="label">{{worker.activityName}}</span></div>
+        <div>{{ 'status' | translate }}:&nbsp;<span style="font-size:1em" ng-class="{'label-success': worker.activityName == 'Idle', 'label-danger': worker.activityName == 'Busy', 'label-default': worker.activityName == 'Offline', 'label-warning': worker.activityName == 'Reserved'}" class="label">{{worker.activityName}}</span></div>
 
       <div class="reservations">
 
@@ -55,7 +55,7 @@
       <!-- agent is waiting for new reservation -->
       <div class="panel panel-default agent-waiting" ng-show="reservation == null && task == null">
         <div class="panel-heading">
-          <h4 class="panel-title">Waiting for new task ...</h4>
+          <h4 class="panel-title">{{ 'waiting' | translate }} ...</h4>
         </div>
       </div>
       <!-- agent is waiting for new reservation -->
@@ -166,9 +166,9 @@
 
       </div>
 
-      <button class="button-call" ng-if="isActive == false" ng-click="call(phoneNumber)">CALL</button>
-      <button class="button-hangup" ng-if="isActive == true" ng-click="hangup()">HANGUP</button>
-      <span class="status">Status: {{status}}</span>
+      <button class="button-call" ng-if="isActive == false" ng-click="call(phoneNumber)">{{ 'phone.button.call' | translate }}</button>
+      <button class="button-hangup" ng-if="isActive == true" ng-click="hangup()">{{ 'phone.button.hangup' | translate }}</button>
+      <span class="status">{{ 'status' | translate }}: {{status}}</span>
       <span ng-if="error != null" class="status">Error: {{error}}</span>
     </section>
 
@@ -188,6 +188,8 @@
   <script src="/scripts/angular.min.js"></script>
   <script src="/scripts/angular-messages.min.js"></script>
   <script src="/scripts/angular-scrollglue.js"></script>
+  <script src="/scripts/angular-translate.min.js"></script>
+  <script src="/scripts/angular-translate-loader-static-files.min.js"></script>
   <script src="/scripts/moment.min.js"></script>
   <script src="WorkflowController.js"></script>
   <script src="PhoneController.js"></script>

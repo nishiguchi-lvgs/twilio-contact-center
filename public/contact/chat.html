@@ -20,7 +20,7 @@
 		<div class="row">
 
 			<div class="page-header hidden-sm hidden-xs">
-				<h2>Twilio Contact Center: Live Chat</h2>
+				<h2>{{ 'title' | translate }}</h2>
 			</div>
 
 			<div class="col-xs-12">
@@ -40,13 +40,13 @@
 						<div>
 
 							<div class="form-group">
-			           <input ng-model="user.identity" name="identity" ng-minlength="3" ng-maxlength="20" ng-required="true" type="text" class="form-control" ng-disabled="session.isLoading" placeholder="Your Name">
-			        </div>
+								<input ng-model="user.identity" name="identity" ng-minlength="3" ng-maxlength="20" ng-required="true" type="text" class="form-control" ng-disabled="session.isLoading" placeholder="{{ 'main.name' | translate }}">
+							</div>
 
-			        <div class="form-group">
-			          <button type="submit" ng-disabled="session.isLoading || supportChatForm.$invalid || supportChatForm.$pristine" class="initiate btn btn-primary" ng-click="initChat()" ><span style="margin-right: 10px;" ng-show="session.isLoading == true"><i class="fa fa-refresh fa-spin"></i></span>Go</button>
-			        </div>
-							
+							<div class="form-group">
+								<button type="submit" ng-disabled="session.isLoading || supportChatForm.$invalid || supportChatForm.$pristine" class="initiate btn btn-primary" ng-click="initChat()" ><span style="margin-right: 10px;" ng-show="session.isLoading == true"><i class="fa fa-refresh fa-spin"></i></span>{{ 'button.go' | translate }}</button>
+							</div>
+
 							<div ng-messages="supportChatForm.identity.$error" role="alert">
 								<div ng-message="minlength"  class="alert alert-danger">Name is too short</div>
 								<div ng-message="maxlength" class="alert alert-danger">Name is too long</div>
@@ -90,10 +90,10 @@
 						<form class="chat-message-form form-horizontal" name="chatMessageForm" ng-hide="session.expired" style="margin-top:5px">
 							<div class="form-group">
 								<div class="col-xs-8">
-									<input ng-model="message" ng-model-options="{ debounce: 250 }" ng-required="true" autocomplete="off" ng-focus="focused()" name="text" type="text" class="form-control" placeholder="say something">
+									<input ng-model="message" ng-model-options="{ debounce: 250 }" ng-required="true" autocomplete="off" ng-focus="focused()" name="text" type="text" class="form-control" placeholder="{{ 'main.message' | translate }}">
 								</div>
 								<div class="col-xs-4">
-									<button ng-disabled="chatMessageForm.$invalid || chatMessageForm.$pristine" class="btn btn-primary" ng-click="send()">Send</button>
+									<button ng-disabled="chatMessageForm.$invalid || chatMessageForm.$pristine" class="btn btn-primary" ng-click="send()">{{ 'button.send' | translate }}</button>
 								</div>
 							</div>
 						</form>
@@ -104,12 +104,12 @@
 
 			</div>
 
-			<div class="col-md-4 hidden-sm hidden-xs">
-				<h4 style="margin:0px">Call us:</h4>
-				<h3 class="caller-id" style="margin:0px">{{configuration.twilio.callerId}}</h3>
+			<div class="col-md-4">
+				<h4 style="margin:0px">{{ 'side.call' | translate }}:</h4>
+				<h3 class="caller-id" style="margin:0px;margin-bottom:40px;">{{configuration.twilio.callerId}}</h3>
 
-				<h4>Request a callback?</h4>
-				<a href="index.html">click here</a>
+				<h4>{{ 'side.callback' | translate }}</h4>
+				<a href="index.html">{{ 'side.link' | translate }}</a>
 
 			</div>
 
@@ -120,6 +120,8 @@
 	<script src="/scripts/angular.min.js"></script>
 	<script src="/scripts/angular-messages.min.js"></script>
 	<script src="/scripts/angular-scrollglue.js"></script>
+	<script src="/scripts/angular-translate.min.js"></script>
+	<script src="/scripts/angular-translate-loader-static-files.min.js"></script>
 	<script src="ChatController.js"></script>
 	<script src="/scripts/moment.min.js"></script>
   <script src="https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.js"></script>

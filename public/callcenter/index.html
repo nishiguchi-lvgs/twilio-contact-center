@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Twilio Contact Center: Call Agent Login</title>
 
-  <link rel="stylesheet" href="/styles/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="/styles/default.css" type="text/css" />
 
 </head>
@@ -14,8 +14,8 @@
   <div class="row">
 
     <div class=" col-md-6 col-md-offset-3">
-      <h2>Welcome Agent</h2>
-      <p class="lead">Please log in with your agent name</p>
+      <h2>{{ 'title' | translate }}</h2>
+      <p class="lead">{{ 'note' | translate }}</p>
     </div>
 
     <div ng-controller="LoginController" class="well col-md-6 col-md-offset-3">
@@ -24,22 +24,22 @@
 
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" ng-focus="reset()" type="text" name="friendlyName" placeholder="Name" ng-model="worker.friendlyName" required>
+            <input class="form-control" ng-focus="reset()" type="text" name="friendlyName" placeholder="{{ 'input.name' | translate }}" ng-model="worker.friendlyName" required>
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-xs-12">
-            <button ng-disabled="loginForm.friendlyName.$invalid" type="submit" class="btn btn-primary">Log In</button>
+            <button ng-disabled="loginForm.friendlyName.$invalid" type="submit" class="btn btn-primary">{{ 'button.login' | translate }}</button>
           </div>
         </div>
 
         <div ng-messages="loginForm.friendlyName.$error" role="alert">
-          <div ng-message="required" ng-show="loginForm.friendlyName.$touched" class="alert alert-danger">Name is required</div>
+          <div ng-message="required" ng-show="loginForm.friendlyName.$touched" class="alert alert-danger">{{ 'message.required' | translate }}</div>
         </div>
 
         <div ng-messages="loginForm.$error" role="alert">
-          <div ng-message="notFound"  class="alert alert-danger" style="margin-bottom:0px">Worker does not exist</div>
+          <div ng-message="notFound"  class="alert alert-danger" style="margin-bottom:0px">{{ 'message.notExists' | translate }}</div>
           <div ng-message="serverError" class="alert alert-danger" style="margin-bottom:0px">
             <strong>Oh snap!</strong><br>An error occured, please check JavaScript console for details
           </div>
@@ -53,6 +53,8 @@
 
   <script src="/scripts/angular.min.js"></script>
   <script src="/scripts/angular-messages.min.js"></script>
+  <script src="/scripts/angular-translate.min.js"></script>
+  <script src="/scripts/angular-translate-loader-static-files.min.js"></script>
   <script src="LoginController.js"></script>
 
   </body>

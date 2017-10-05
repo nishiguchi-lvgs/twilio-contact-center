@@ -1,4 +1,17 @@
-function LoginController ($scope, $http) {
+const app = angular.module('callcenterApplication', ['ngMessages', 'pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/callcenter/login/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
+
+app.controller('LoginController', function LoginController ($scope, $http) {
 
 	$scope.reset = function () {
 		$scope.loginForm.$setValidity('notFound', true);
@@ -24,8 +37,4 @@ function LoginController ($scope, $http) {
 
 	};
 
-}
-
-angular
-	.module('callcenterApplication', ['ngMessages'])
-	.controller('LoginController', LoginController);
+});

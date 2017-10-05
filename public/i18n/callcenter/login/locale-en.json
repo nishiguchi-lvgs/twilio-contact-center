@@ -1,0 +1,14 @@
+{
+  "title": "Welcome Agent",
+  "note": "Please log in with your agent name",
+  "input": {
+    "name": "Name"
+  },
+  "button": {
+    "login": "Log In"
+  },
+  "message": {
+    "required": "Name is required.",
+    "notExists": "Worker does not exist."
+  }
+}

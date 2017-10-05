@@ -1,4 +1,17 @@
-function AdministrationController ($scope, $http, $log, $q) {
+const app = angular.module('administrationApplication', ['checklist-model', 'pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/administration/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
+
+app.controller('AdministrationController', function AdministrationController ($scope, $http, $log, $q) {
 	/* misc configuration data, for instance callerId for outbound calls */
 	$scope.configuration;
 
@@ -184,8 +197,4 @@ function AdministrationController ($scope, $http, $log, $q) {
 
 	};
 
-}
-
-angular
-	.module('administrationApplication', ['checklist-model', 'client-name', 'convert-to-number'])
-	.controller('AdministrationController', AdministrationController);
+});

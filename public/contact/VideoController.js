@@ -1,4 +1,17 @@
-function VideoController ($scope, $http, $timeout, $log, $window) {
+const app = angular.module('supportApplication', ['ngMessages', 'pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/contact/video/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
+
+app.controller('VideoController', function VideoController ($scope, $http, $timeout, $log, $window) {
 	$scope.configuration;
 
 	/* Twilio Video */
@@ -158,8 +171,4 @@ function VideoController ($scope, $http, $timeout, $log, $window) {
 		$scope.room.disconnect();
 	};
 
-}
-
-angular
-	.module('supportApplication', ['ngMessages'])
-	.controller('VideoController', VideoController);
+});

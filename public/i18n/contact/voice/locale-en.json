@@ -1,0 +1,28 @@
+{
+  "title": "Twilio Contact Center: Contact Form",
+  "main": {
+    "title": "...let us call you back",
+    "department": "Department",
+    "question": {
+      "label": "What question do you have?",
+      "note": "Please type in the question you have"
+    },
+    "customerProp": {
+      "label": "Your name and phone number?",
+      "placeholder": "Name"
+    }
+  },
+  "side": {
+    "call": "Call us",
+    "chat": "Chat with an agent?",
+    "link": "click here"
+  },
+  "button": {
+    "submit": "Submit"
+  },
+  "message": {
+    "required": "Phone number is required",
+    "invalid": "Invalid phone number",
+    "completed": "Thanks, we call you as soon as possible."
+  }
+}

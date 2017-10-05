@@ -1,4 +1,15 @@
-var app = angular.module('callcenterApplication', ['ngMessages', 'glue.directives']);
+var app = angular.module('callcenterApplication', ['ngMessages', 'luegg.directives', 'pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/callcenter/workplace/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
 
 app.controller('WorkflowController', function ($scope, $rootScope, $http, $interval, $log, $window) {
 

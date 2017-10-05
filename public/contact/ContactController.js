@@ -1,4 +1,15 @@
-var app = angular.module('supportApplication', ['ngMessages', 'phone-number']);
+var app = angular.module('supportApplication', ['ngMessages', 'pascalprecht.translate']);
+
+app.config(['$translateProvider', function($translateProvider) {
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: '/i18n/contact/voice/locale-',
+		suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage();
+	$translateProvider.useSanitizeValueStrategy('escape');
+
+}]);
 
 app.controller('ContactController', function ($scope, $http, $timeout, $log) {
 

@@ -1,0 +1,16 @@
+{
+  "title": "Twilio Contact Center: Live Chat",
+  "main": {
+    "name": "Your Name",
+    "message": "say something"
+  },
+  "side": {
+    "call": "Call us",
+    "callback": "Request a callback?",
+    "link": "click here"
+  },
+  "button": {
+    "go": "Go",
+    "send": "Send"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Twilioコンタクトセンター: 管理",
+  "callAgents": {
+    "tab": "オペレータ",
+    "header": {
+      "name": "名前",
+      "status": "ステータス",
+      "channels": "チャンネル",
+      "team": "チーム"
+    },
+    "button": {
+      "remove": "削除",
+      "create": "作成",
+      "save": "保存"
+    }
+  },
+  "ivrMenu": {
+    "tab": "IVRメニュー",
+    "textToSpeech": "テキスト音声変換",
+    "teams": {
+      "header": "チーム",
+      "ivrOption": "IVRオプション"
+    },
+    "button": {
+      "delete": "削除",
+      "add": "追加",
+      "save": "保存"
+    }
+  }
+}
